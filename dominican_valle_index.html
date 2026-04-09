@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dominican Valle Restaurant – Washington Heights, NY</title>
+<meta name="description" content="Authentic Dominican cuisine in the heart of Washington Heights. Open daily 7AM–11PM. Free delivery available. Call (646) 869-0092.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:   #0f2538;
+    --navy2:  #1a3a5c;
+    --red:    #c0392b;
+    --red2:   #e74c3c;
+    --gold:   #d4a843;
+    --green:  #2d6a27;
+    --green2: #3d8a35;
+    --cream:  #fdf8f0;
+    --warm:   #f5ede0;
+    --text:   #1a1a1a;
+    --muted:  #6b5e52;
+    --border: #e8ddd0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--cream); overflow-x: hidden; }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    background: var(--navy); padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px; border-bottom: 2px solid var(--gold);
+  }
+  .nav-logo { display: flex; flex-direction: column; }
+  .nav-logo-main { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; font-weight: 700; line-height: 1; }
+  .nav-logo-sub { font-size: 10px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: #b0c4d8; font-size: 13px; text-decoration: none; transition: color 0.2s; font-weight: 400; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--red); color: #fff; padding: 9px 20px;
+    border-radius: 4px; font-size: 13px; font-weight: 500;
+    text-decoration: none; transition: background 0.2s; white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--red2); color: #fff; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; padding-top: 64px;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(45,106,39,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(192,57,43,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(212,168,67,0.1) 0%, transparent 40%);
+  }
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+    background-size: 20px 20px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 780px; padding: 0 24px; }
+  .hero-flag { display: flex; justify-content: center; gap: 0; margin-bottom: 28px; border-radius: 2px; overflow: hidden; width: 60px; margin-left: auto; margin-right: auto; }
+  .flag-seg { height: 5px; flex: 1; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; font-weight: 500; }
+  .hero h1 { font-size: clamp(36px, 6vw, 64px); color: #fff; line-height: 1.1; margin-bottom: 20px; }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub { font-size: 16px; color: #a0b8d0; margin-bottom: 8px; font-weight: 300; line-height: 1.6; }
+  .hero-sub-es { font-size: 14px; color: #7aaa6a; margin-bottom: 36px; font-style: italic; font-weight: 300; }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+  .btn-hero-primary {
+    background: var(--red); color: #fff; padding: 14px 32px;
+    border-radius: 4px; font-size: 15px; font-weight: 500;
+    text-decoration: none; transition: all 0.2s; display: inline-block;
+    border: 2px solid var(--red);
+  }
+  .btn-hero-primary:hover { background: var(--red2); border-color: var(--red2); transform: translateY(-1px); }
+  .btn-hero-secondary {
+    background: transparent; color: #fff; padding: 14px 32px;
+    border-radius: 4px; font-size: 15px; font-weight: 400;
+    text-decoration: none; transition: all 0.2s; display: inline-block;
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+  .btn-hero-secondary:hover { border-color: rgba(255,255,255,0.7); transform: translateY(-1px); }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(45,106,39,0.3); border: 1px solid rgba(122,170,106,0.4);
+    color: #9dcc8d; padding: 8px 18px; border-radius: 24px; font-size: 13px;
+  }
+  .badge-dot { width: 7px; height: 7px; background: #6dba56; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+  .hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.3); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--gold); display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-item { padding: 18px 20px; text-align: center; border-right: 1px solid rgba(0,0,0,0.1); }
+  .stat-item:last-child { border-right: none; }
+  .stat-val { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); font-weight: 700; }
+  .stat-lbl { font-size: 11px; color: rgba(15,37,56,0.7); margin-top: 2px; }
+  .stat-lbl-es { font-size: 10px; color: rgba(15,37,56,0.5); font-style: italic; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
+  .section-full { padding: 80px 40px; }
+  .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 500; }
+  .section-title { font-size: clamp(28px, 4vw, 40px); color: var(--navy); margin-bottom: 6px; }
+  .section-title-es { font-size: 15px; color: var(--green); font-style: italic; margin-bottom: 36px; font-weight: 300; }
+  .rule { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 12px; }
+
+  /* ── MENU ── */
+  .menu-bg { background: #fff; }
+  .menu-cats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+  .cat-btn {
+    padding: 7px 18px; border-radius: 20px; font-size: 13px; cursor: pointer;
+    border: 1.5px solid var(--border); background: transparent; color: var(--muted);
+    transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+  }
+  .cat-btn.active, .cat-btn:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .menu-item {
+    background: var(--cream); border: 1px solid var(--border);
+    border-radius: 8px; padding: 20px; display: flex;
+    justify-content: space-between; align-items: flex-start;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .menu-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .menu-item-left { flex: 1; padding-right: 16px; }
+  .menu-name { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--navy); font-weight: 600; }
+  .menu-name-es { font-size: 12px; color: var(--green); font-style: italic; margin-top: 2px; }
+  .menu-desc { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+  .menu-tags { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .menu-tag {
+    font-size: 10px; padding: 3px 10px; border-radius: 12px; font-weight: 500;
+  }
+  .tag-fav { background: #fff3e0; color: #b8660a; }
+  .tag-breakfast { background: #e8f5e9; color: #2d6a27; }
+  .tag-seafood { background: #e3f2fd; color: #1565c0; }
+  .tag-dessert { background: #fce4ec; color: #c62828; }
+  .menu-price { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--red); font-weight: 700; white-space: nowrap; }
+
+  /* ── ABOUT ── */
+  .about-bg { background: var(--warm); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .about-text p { font-size: 15px; color: #3a3028; line-height: 1.85; margin-bottom: 18px; font-weight: 300; }
+  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
+  .feature-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 16px 14px; text-align: center; }
+  .feature-icon { font-size: 22px; margin-bottom: 6px; }
+  .feature-en { font-size: 13px; color: var(--navy); font-weight: 500; }
+  .feature-es { font-size: 11px; color: var(--green); font-style: italic; }
+  .hours-card { background: var(--navy); border-radius: 12px; padding: 32px; }
+  .hours-title { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gold); margin-bottom: 4px; }
+  .hours-sub { font-size: 12px; color: #7aaa6a; margin-bottom: 24px; font-style: italic; }
+  .hours-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 14px; color: #c0d8f0; }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row span:last-child { color: #7aaa6a; font-weight: 500; }
+  .contact-info { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .contact-row { display: flex; align-items: center; gap: 12px; color: #a0b8d0; font-size: 14px; }
+  .contact-icon-box { width: 36px; height: 36px; background: rgba(212,168,67,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+
+  /* ── REVIEWS ── */
+  .reviews-bg { background: #fff; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .review-card { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 24px; position: relative; }
+  .review-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 64px; color: var(--gold); opacity: 0.3; position: absolute; top: 8px; left: 18px; line-height: 1; }
+  .review-stars { color: var(--gold); font-size: 13px; margin-bottom: 12px; }
+  .review-text { font-size: 13px; color: #4a3f35; line-height: 1.7; font-style: italic; padding-top: 8px; }
+  .review-author { font-size: 12px; color: var(--navy); font-weight: 500; margin-top: 14px; }
+  .review-source { font-size: 10px; color: var(--muted); }
+
+  /* ── ORDER ── */
+  .order-bg { background: var(--navy); }
+  .order-inner { max-width: 900px; margin: 0 auto; text-align: center; padding: 80px 40px; }
+  .order-inner h2 { font-size: clamp(28px, 4vw, 42px); color: #fff; margin-bottom: 6px; }
+  .order-inner .es { color: #7aaa6a; font-style: italic; font-size: 16px; margin-bottom: 48px; font-weight: 300; }
+  .order-options { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+  .order-opt {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px; padding: 24px 28px; min-width: 160px;
+    transition: all 0.2s; cursor: pointer; text-decoration: none; display: block;
+  }
+  .order-opt:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); }
+  .order-opt-icon { font-size: 28px; margin-bottom: 10px; }
+  .order-opt-label { font-size: 15px; color: #fff; font-weight: 500; margin-bottom: 4px; }
+  .order-opt-sub { font-size: 12px; color: #7aaa6a; }
+  .order-main-btn {
+    display: inline-block; background: var(--red); color: #fff;
+    padding: 16px 48px; border-radius: 4px; font-size: 16px; font-weight: 500;
+    text-decoration: none; transition: all 0.2s;
+    border: 2px solid var(--red);
+  }
+  .order-main-btn:hover { background: var(--red2); border-color: var(--red2); transform: translateY(-2px); }
+
+  /* ── MAP ── */
+  .map-bg { background: var(--warm); }
+  .map-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+  .map-contact-cards { display: flex; flex-direction: column; gap: 14px; }
+  .info-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+  .info-icon { width: 40px; height: 40px; background: var(--warm); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; border: 1px solid var(--border); }
+  .info-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .info-value { font-size: 14px; color: var(--navy); font-weight: 500; line-height: 1.5; }
+  .info-sub { font-size: 12px; color: var(--green); font-style: italic; margin-top: 2px; }
+  .map-embed { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+  .map-embed iframe { display: block; width: 100%; height: 380px; border: none; }
+  .delivery-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .delivery-badge {
+    display: flex; align-items: center; gap: 6px;
+    background: #fff; border: 1px solid var(--border);
+    padding: 8px 14px; border-radius: 6px; font-size: 12px;
+    color: var(--navy); font-weight: 500; text-decoration: none;
+    transition: box-shadow 0.2s;
+  }
+  .delivery-badge:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+
+  /* ── FOOTER ── */
+  footer { background: #07151f; padding: 40px; text-align: center; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gold); margin-bottom: 12px; }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-links a { color: #4a6070; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #7a9ab0; }
+  .footer-copy { font-size: 12px; color: #2a3a46; }
+  .footer-built { font-size: 11px; color: #1e2d38; margin-top: 6px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .section, .section-full { padding: 56px 20px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .menu-grid, .about-grid, .reviews-grid, .map-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .order-options { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="nav-logo-main">Dominican Valle</span>
+    <span class="nav-logo-sub">Washington Heights, NY</span>
+  </div>
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#about">About / Nosotros</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="https://www.doordash.com/store/dominican-valle-restaurant-new-york-765953/" target="_blank" class="nav-cta">Order Now / Ordenar</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-flag">
+      <div class="flag-seg" style="background:#1a3a5c"></div>
+      <div class="flag-seg" style="background:#c0392b"></div>
+      <div class="flag-seg" style="background:#1a3a5c"></div>
+    </div>
+    <p class="hero-eyebrow">Est. Washington Heights · Nueva York</p>
+    <h1>Taste of the<br><em>Dominican Republic</em><br>in Every Plate</h1>
+    <p class="hero-sub">Authentic flavors, warm hospitality, open every single day</p>
+    <p class="hero-sub-es">Sabores auténticos, hospitalidad cálida, abiertos todos los días</p>
+    <div class="hero-btns">
+      <a href="https://www.doordash.com/store/dominican-valle-restaurant-new-york-765953/" target="_blank" class="btn-hero-primary">Order Online / Ordenar en Línea</a>
+      <a href="#menu" class="btn-hero-secondary">View Menu / Ver Menú</a>
+    </div>
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Open Today 7:00 AM – 11:00 PM · Abierto Hoy
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-val">7AM–11PM</div>
+    <div class="stat-lbl">Open Every Day</div>
+    <div class="stat-lbl-es">Abierto Todos los Días</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-val">Free Delivery</div>
+    <div class="stat-lbl">Available Now</div>
+    <div class="stat-lbl-es">Entrega Gratis Disponible</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-val">(646) 869-0092</div>
+    <div class="stat-lbl">Call Us Anytime</div>
+    <div class="stat-lbl-es">Llámanos Hoy</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-val">Washington Heights</div>
+    <div class="stat-lbl">1601 St Nicholas Ave</div>
+    <div class="stat-lbl-es">New York, NY 10040</div>
+  </div>
+</div>
+
+<!-- MENU -->
+<div class="menu-bg" id="menu">
+  <div class="section">
+    <p class="section-label">What We Serve / Lo Que Servimos</p>
+    <div class="rule"></div>
+    <h2 class="section-title">Our Menu / Nuestro Menú</h2>
+    <p class="section-title-es">Fresh ingredients, traditional recipes · Ingredientes frescos, recetas tradicionales</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-name">Whole Baked Chicken</div>
+          <div class="menu-name-es">Pollo Entero Al Horno</div>
+          <div class="menu-desc">Slow-roasted to perfection with traditional Dominican seasoning and herbs</div>
+          <div class="menu-tags"><span class="menu-tag tag-fav">Fan Favorite / Favorito</span></div>
+        </div>
+        <div class="menu-price">$18</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-name">Dominican Steak Sandwich</div>
+          <div class="menu-name-es">Sandwich de Bistec</div>
+          <div class="menu-desc">Juicy steak with peppers, onions, and our house sauce on fresh bread</div>
+          <div class="menu-tags"><span class="menu-tag tag-fav">Bestseller</span></div>
+        </div>
+        <div class="menu-price">$13</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-name">Tres Golpes Breakfast</div>
+          <div class="menu-name-es">Tres Golpes</div>
+          <div class="menu-desc">Mashed plantains, salami, cheese, and eggs any style — a Dominican classic</div>
+          <div class="menu-tags"><span class="menu-tag tag-breakfast">Breakfast / Desayuno</span><span class="menu-tag tag-fav">Most Ordered</span></div>
+        </div>
+        <div class="menu-price">$14</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-name">Garlic Shrimp</div>
+          <div class="menu-name-es">Camarones Al Ajillo</div>
+          <div class="menu-desc">Shrimp sautéed in rich garlic sauce, served with rice and plantains</div>
+          <div class="menu-tags"><span class="menu-tag tag-seafood">Seafood / Mariscos</span></div>
+        </div>
+        <div class="menu-price">$32</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-name">Steamed Fish Fillet</div>
+          <div class="menu-name-es">Filete de Pescado Al Vapor</div>
+          <div class="menu-desc">Fresh fish steamed with Dominican herbs, peppers, and vegetables</div>
+          <div class="menu-tags"><span class="menu-tag tag-seafood">Seafood / Mariscos</span></div>
+        </div>
+        <div class="menu-price">$33</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-name">Tres Leches Cake</div>
+          <div class="menu-name-es">Pastel de Tres Leches</div>
+          <div class="menu-desc">Classic Dominican dessert, light and creamy — the perfect ending</div>
+          <div class="menu-tags"><span class="menu-tag tag-dessert">Dessert / Postre</span></div>
+        </div>
+        <div class="menu-price">$6.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-name">Morir Soñando</div>
+          <div class="menu-name-es">Morir Soñando</div>
+          <div class="menu-desc">Classic Dominican orange juice with milk — "to die dreaming"</div>
+          <div class="menu-tags"><span class="menu-tag tag-breakfast">Drinks / Bebidas</span></div>
+        </div>
+        <div class="menu-price">$7</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-name">Chicken Soup</div>
+          <div class="menu-name-es">Sopa de Pollo</div>
+          <div class="menu-desc">Hearty traditional chicken soup made fresh daily — small or large</div>
+        </div>
+        <div class="menu-price">$7.50+</div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:32px; font-size:13px; color:var(--muted);">
+      Full menu available online · Menú completo disponible en línea —
+      <a href="https://www.doordash.com/store/dominican-valle-restaurant-new-york-765953/" target="_blank" style="color:var(--red); font-weight:500;">View Full Menu / Ver Menú Completo</a>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-bg" id="about">
+  <div class="section">
+    <p class="section-label">Our Story / Nuestra Historia</p>
+    <div class="rule"></div>
+    <h2 class="section-title">About Us / Nosotros</h2>
+    <p class="section-title-es">A taste of home in the heart of Washington Heights</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>At Dominican Valle, we bring the heart and soul of the Dominican Republic directly to your plate. Nestled in the vibrant community of Washington Heights, we have built a place where every dish tells a story — crafted from the freshest ingredients and time-honored recipes passed down through generations.</p>
+        <p>En Dominican Valle, traemos el corazón y el alma de la República Dominicana directamente a su plato. Cada visita se siente como un abrazo familiar — comida auténtica, gente cálida, y el sabor de casa.</p>
+        <p>From our classic Pollo Al Horno to our beloved Tres Golpes breakfast, every plate is prepared with care and pride. We welcome everyone — whether you are a regular from the neighborhood or visiting the Heights for the first time.</p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🍽️</div>
+            <div class="feature-en">Dine In</div>
+            <div class="feature-es">Comer Aquí</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛵</div>
+            <div class="feature-en">Free Delivery</div>
+            <div class="feature-es">Entrega Gratis</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <div class="feature-en">Takeout</div>
+            <div class="feature-es">Para Llevar</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">☀️</div>
+            <div class="feature-en">Open Daily</div>
+            <div class="feature-es">Todos los Días</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hours-card">
+          <h3 class="hours-title">Hours / Horario</h3>
+          <p class="hours-sub">Open 7 days a week · Abierto 7 días a la semana</p>
+          <div class="hours-row"><span>Monday / Lunes</span><span>7AM – 11PM</span></div>
+          <div class="hours-row"><span>Tuesday / Martes</span><span>7AM – 11PM</span></div>
+          <div class="hours-row"><span>Wednesday / Miércoles</span><span>7AM – 11PM</span></div>
+          <div class="hours-row"><span>Thursday / Jueves</span><span>7AM – 11PM</span></div>
+          <div class="hours-row"><span>Friday / Viernes</span><span>7AM – 11PM</span></div>
+          <div class="hours-row"><span>Saturday / Sábado</span><span>7AM – 11PM</span></div>
+          <div class="hours-row"><span>Sunday / Domingo</span><span>7AM – 11PM</span></div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-row">
+            <div class="contact-icon-box">📍</div>
+            <span>1601 St Nicholas Ave, New York, NY 10040</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon-box">📞</div>
+            <span>(646) 869-0092</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon-box">📸</div>
+            <a href="https://www.instagram.com/dominicanvalleny/" target="_blank" style="color:#7aaa6a; text-decoration:none;">@dominicanvalleny</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews-bg" id="reviews">
+  <div class="section">
+    <p class="section-label">What People Say / Lo Que Dicen</p>
+    <div class="rule"></div>
+    <h2 class="section-title">Customer Reviews</h2>
+    <p class="section-title-es">Lo que dicen nuestros clientes</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best Dominican food on the block. I go here a couple times a week. Their baked chicken is my favorite. This place will see me as a returning customer."</p>
+        <p class="review-author">Verified Customer</p>
+        <p class="review-source">via Google Reviews</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"You'll find yourself craving their food regularly. The amount of food makes the price seem even better. The server's warmth made our meal truly memorable."</p>
+        <p class="review-author">Verified Customer</p>
+        <p class="review-source">via Yelp</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"From the moment you step in you are greeted with characteristic Latino charm. This is the type of atmosphere and food we came to the Heights for. I will come back."</p>
+        <p class="review-author">Verified Customer</p>
+        <p class="review-source">via TripAdvisor</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER -->
+<div class="order-bg">
+  <div class="order-inner">
+    <h2>Ready to Order?</h2>
+    <p class="es">¿Listo para Ordenar? · Free delivery on your first order</p>
+    <div class="order-options">
+      <a href="https://www.doordash.com/store/dominican-valle-restaurant-new-york-765953/" target="_blank" class="order-opt">
+        <div class="order-opt-icon">🍔</div>
+        <div class="order-opt-label">DoorDash</div>
+        <div class="order-opt-sub">Order & Track Live</div>
+      </a>
+      <a href="https://www.ubereats.com/new-york/food-delivery/dominican-valle-restaurant/nBqmXKwUSKS8y1RHOouuYQ" target="_blank" class="order-opt">
+        <div class="order-opt-icon">🛵</div>
+        <div class="order-opt-label">Uber Eats</div>
+        <div class="order-opt-sub">Fast Delivery</div>
+      </a>
+      <a href="https://www.grubhub.com/restaurant/el-dominican-valle-1601-st-nicholas-ave-new-york/545800" target="_blank" class="order-opt">
+        <div class="order-opt-icon">📦</div>
+        <div class="order-opt-label">Grubhub</div>
+        <div class="order-opt-sub">Delivery & Pickup</div>
+      </a>
+      <a href="tel:6468690092" class="order-opt">
+        <div class="order-opt-icon">📞</div>
+        <div class="order-opt-label">Call Us</div>
+        <div class="order-opt-sub">(646) 869-0092</div>
+      </a>
+    </div>
+    <a href="https://www.doordash.com/store/dominican-valle-restaurant-new-york-765953/" target="_blank" class="order-main-btn">
+      Order Now / Ordenar Ahora
+    </a>
+  </div>
+</div>
+
+<!-- MAP & CONTACT -->
+<div class="map-bg" id="contact">
+  <div class="section">
+    <p class="section-label">Find Us / Encuéntranos</p>
+    <div class="rule"></div>
+    <h2 class="section-title">Visit Us / Visítanos</h2>
+    <p class="section-title-es">1601 St Nicholas Ave, Washington Heights, New York, NY 10040</p>
+    <div class="map-grid">
+      <div>
+        <div class="map-contact-cards">
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label">Address / Dirección</div>
+              <div class="info-value">1601 St Nicholas Ave<br>New York, NY 10040</div>
+              <div class="info-sub">Washington Heights, Manhattan</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📞</div>
+            <div>
+              <div class="info-label">Phone / Teléfono</div>
+              <div class="info-value"><a href="tel:6468690092" style="color:var(--navy); text-decoration:none;">(646) 869-0092</a></div>
+              <div class="info-sub">Llámanos hoy</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🕐</div>
+            <div>
+              <div class="info-label">Hours / Horario</div>
+              <div class="info-value">7:00 AM – 11:00 PM</div>
+              <div class="info-sub">Every Day / Todos los Días</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📸</div>
+            <div>
+              <div class="info-label">Follow Us / Síguenos</div>
+              <div class="info-value"><a href="https://www.instagram.com/dominicanvalleny/" target="_blank" style="color:var(--navy); text-decoration:none;">@dominicanvalleny</a></div>
+              <div class="info-sub">Instagram · 1,600+ followers</div>
+            </div>
+          </div>
+        </div>
+        <div class="delivery-badges">
+          <a href="https://www.doordash.com/store/dominican-valle-restaurant-new-york-765953/" target="_blank" class="delivery-badge">🍔 DoorDash</a>
+          <a href="https://www.ubereats.com/new-york/food-delivery/dominican-valle-restaurant/nBqmXKwUSKS8y1RHOouuYQ" target="_blank" class="delivery-badge">🛵 Uber Eats</a>
+          <a href="https://www.grubhub.com/restaurant/el-dominican-valle-1601-st-nicholas-ave-new-york/545800" target="_blank" class="delivery-badge">📦 Grubhub</a>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.123456789!2d-73.9297379!3d40.8551541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f41b5eaa042d%3A0xe39f4110b4e0751e!2sDominican%20Valle%20Restaurant!5e0!3m2!1sen!2sus!4v1234567890"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Dominican Valle Restaurant Location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dominican Valle Restaurant</div>
+  <div class="footer-links">
+    <a href="#menu">Menu</a>
+    <a href="#about">About / Nosotros</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.instagram.com/dominicanvalleny/" target="_blank">Instagram</a>
+    <a href="https://www.doordash.com/store/dominican-valle-restaurant-new-york-765953/" target="_blank">Order Online</a>
+  </div>
+  <p class="footer-copy">© 2026 Dominican Valle Restaurant · 1601 St Nicholas Ave, Washington Heights, NY · (646) 869-0092</p>
+  <p class="footer-built">Website designed for Dominican Valle Restaurant · Washington Heights, New York</p>
+</footer>
+
+</body>
+</html>
